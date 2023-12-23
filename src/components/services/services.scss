@@ -60,16 +60,33 @@
     display: flex;
     max-width: 1366px;
     margin: auto;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    .box:first-child {
+      border: none;
+      border-radius: 10px 0px 0px 10px;
+    }
+    .box:last-child {
+      border: none;
+      border-radius: 0px 10px 10px 0px;
+      border-left: 0.5px solid gray;
+    }
     .box {
-      padding: 50px;
-      border: 0.5px solid gray;
+      height: 100%;
+      padding: 10px 50px;
+      border-left: 0.5px solid gray;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       button {
         padding: 10px;
+
         background-color: orange;
         border: none;
+        border-radius: 10px;
         cursor: pointer;
       }
     }
