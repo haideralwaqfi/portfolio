@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { FaSpinner } from "react-icons/fa";
 
 function Contact() {
   const variants = {
@@ -23,11 +24,12 @@ function Contact() {
   const formRef = useRef();
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
   const isInView = useInView(ref, { margin: "-100px" });
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    setLoading(true);
     emailjs
       .sendForm(
         "service_157neor",
@@ -38,9 +40,11 @@ function Contact() {
       .then(
         (result) => {
           setSuccess(true);
+          setLoading(false);
         },
         (error) => {
           setError(true);
+          setLoading(false);
         }
       );
   };
@@ -105,7 +109,9 @@ function Contact() {
           <input type="text" required placeholder="Name" name="name" />
           <input type="email" required placeholder="Email" name="email" />
           <textarea rows={8} placeholder="Message" name="message" />
-          <button>Submit</button>
+          <button disabled={loading}>
+            {loading ? <FaSpinner className="spinner" /> : "Submit"}
+          </button>
           {error && "Failed to Send"}
           {success && "The message has been sent"}
         </motion.form>
