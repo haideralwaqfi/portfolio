@@ -50,14 +50,34 @@ function Navbar() {
           <motion.a href="https://fb.com/haideralwaqfi" target="_blank">
             <motion.img variants={variants} src="./facebook.png" alt="" />
           </motion.a>
-          <motion.a href="#" target="_blank">
-            <motion.img variants={variants} src="./instagram.png" alt="" />
+          <motion.a
+            href="https://github.com/haideralwaqfi?tab=repositories"
+            target="_blank">
+            <motion.img
+              variants={variants}
+              src="./github-mark-white.png"
+              alt=""
+            />
           </motion.a>
-          <motion.a href="#" target="_blank">
-            <motion.img variants={variants} src="./youtube.png" alt="" />
+          <motion.a
+            href="https://www.linkedin.com/in/haider-al-waqfi-pmp%C2%AE-76149480/"
+            target="_blank">
+            <motion.img
+              className="linkedin"
+              variants={variants}
+              src="./linkedin.png"
+              alt=""
+            />
           </motion.a>
-          <motion.a href="#" target="_blank">
-            <motion.img variants={variants} src="./dribbble.png" alt="" />
+          <motion.a
+            href="https://www.fiverr.com/haideralwaqfi?up_rollout=true"
+            target="_blank">
+            <motion.img
+              className="linkedin"
+              variants={variants}
+              src="./fiverr.png"
+              alt=""
+            />
           </motion.a>
         </motion.div>
       </div>

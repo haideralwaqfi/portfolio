@@ -47,13 +47,20 @@ function Hero() {
           className="textContainer">
           <motion.h2 variants={textVariants}>HAIDER ALWAQFI</motion.h2>
           <motion.h1 variants={textVariants}>
-            Web developer and UI designer
+            Web developer <br /> HIS Consultant
           </motion.h1>
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>
+            <motion.button
+              onClick={() => (window.location.href = "#services")}
+              variants={textVariants}>
               See the Latest Works
             </motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+
+            <motion.button
+              variants={textVariants}
+              onClick={() => (window.location.href = "#Contact")}>
+              Contact Me
+            </motion.button>
           </motion.div>
           <motion.img
             variants={textVariants}
